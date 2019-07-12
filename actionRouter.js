@@ -52,7 +52,7 @@ router.delete("/:id", (req, res) => {
     .then(num => {
       if (num === 1) {
         res.status(200).json({
-          message: `Post with ${id} successfully deleted`
+          message: `Post with id ${id} successfully deleted`
         });
       } else {
         res.status(404).json({
