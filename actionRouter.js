@@ -17,15 +17,19 @@ router.get("/", (req, res) => {
 
 router.post("/:id", (req, res) => {
   const { id } = req.params;
-  const action = req.body;
+  const action = {
+      description: req.body.description,
+      notes: req.body.notes,
+      project_id: id
+  }
   actions
-    .insert({ action, project_id: id })
+    .insert(action)
     .then(action => {
       res.status(201).json({ action });
     })
-    .catch(() => {
+    .catch((error) => {
       res.status(500).json({
-        error: "Internal server error"
+        error
       });
     });
 });
@@ -47,8 +51,12 @@ router.delete("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
     const { id } = req.params;
-    const action = req.body;
-    actions.update({project_id:id, action})
+    const action = {
+        description: req.body.description,
+        notes: req.body.notes,
+        project_id: id
+    }
+    actions.update(action)
     .then(action => {
         res.status(200).json({
             action
