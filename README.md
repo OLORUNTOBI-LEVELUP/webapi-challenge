@@ -24,31 +24,56 @@ In this challenge, create a web API around the following resources: `Projects` a
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Mention two parts of Express that you learned about this week.
+- [x] Mention two parts of Express that you learned about this week.
 
-- [ ] Describe Middleware?
+### Answer
 
-- [ ] Describe a Resource?
+Middleware
+Server Side Routing
 
-- [ ] What can the API return to help clients know if a request was successful?
+- [x] Describe Middleware?
 
-- [ ] How can we partition our application into sub-applications?
+### Answer
+
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. Middlewares can execute code, make changes to the req and res object, end the response cycle and call the next middleware function.
+
+
+
+- [x] Describe a Resource?
+
+### Answer
+
+A resource is our database, basically where we get our data from. we can perform create, read, update and delete methods on them using HTTP verbs such as GET, DELETE, POST and PUT
+
+
+- [X] What can the API return to help clients know if a request was successful?
+
+### Answer
+It can return a response with the status code 200 which means ok, or 201 which means created
+
+
+- [x] How can we partition our application into sub-applications?
+
+### Answer 
+The way we have access to .use() as a router or sub-router, also works on the Express application instance! That means we can create new instances of the Express object, and .use it in another Express object just like a router or other middleware. This allows us to have subapplications within our main express app.
+
+
 
 ## Project Setup
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Project Manager_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [X] Create a forked copy of this project.
+- [X] Add your _Project Manager_ as collaborator on Github.
+- [X] Clone your forked version of the Repository.
+- [X] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [X] Implement the project on this Branch, committing changes regularly.
+- [X] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master on your fork. **Please don't merge your own pull request.**
-- [ ] Add your _Project Manager_ as a Reviewer on the Pull-request
+- [X] Submit a Pull-Request to merge <firstName-lastName> Branch into master on your fork. **Please don't merge your own pull request.**
+- [X] Add your _Project Manager_ as a Reviewer on the Pull-request
 - [ ] Your _Project Manager_ will count the challenge as done by merging the branch into _master_.
 
 ## Database Persistence Helpers
